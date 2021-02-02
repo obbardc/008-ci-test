@@ -1,0 +1,9 @@
+on: issues
+
+jobs:
+  name: Issue
+  runs-on: ubuntu-latest
+  steps:
+    - run: |
+        echo "Issue created/updated ID ${{ github.event.issue.number }}"
+        export
