@@ -25,18 +25,19 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
-        title: 'Automated PR: ${{ github.event.action.issue.title }}'
-        body: |
-          Issue created by automation
+        with:
+          title: 'Automated PR: ${{ github.event.action.issue.title }}'
+          body: |
+            Issue created by automation
 
-          ${{ github.event.action.issue.body }}
+            ${{ github.event.action.issue.body }}
 
-          Closes: #${{ github.event.action.issue.number }}
-        assignees: obbardc
-        reviewers: obbardc
-        labels: automated-pr-from-issue
-        branch: auto/issue/${{ github.event.action.issue.number }}
-        delete-branch: true
+            Closes: #${{ github.event.action.issue.number }}
+          assignees: obbardc
+          reviewers: obbardc
+          labels: automated-pr-from-issue
+          branch: auto/issue/${{ github.event.action.issue.number }}
+          delete-branch: true
 
       - name: Check outputs
         run: |
