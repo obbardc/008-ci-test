@@ -24,6 +24,7 @@ jobs:
           git commit -sm "Automated commit added by CI"
 
       - name: Create Pull Request
+        id: create-pull-request
         uses: peter-evans/create-pull-request@v3
         with:
           title: 'Automated PR: ${{ github.event.issue.title }}'
@@ -41,8 +42,8 @@ jobs:
 
       - name: Check outputs
         run: |
-          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+          echo "Pull Request Number - ${{ steps.create-pull-request.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.create-pull-request.outputs.pull-request-url }}"
 
       - name: Comment on issue
         uses: actions/github-script@v3
@@ -53,5 +54,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for your submission.\n\nPlease see ${{ steps.cpr.outputs.pull-request-url }}'
+              body: '👋 Thanks for your submission.\n\nPlease see ${{ steps.create-pull-request.outputs.pull-request-url }}'
             })
