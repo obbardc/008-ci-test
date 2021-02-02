@@ -45,7 +45,7 @@ jobs:
           echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
 
       - name: Comment on issue
-        uses: actions/github-script@3.1.0
+        uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -53,5 +53,5 @@ jobs:
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for your submission'
+              body: '👋 Thanks for your submission.\n\nPlease see ${{ steps.cpr.outputs.pull-request-url }}'
             })
