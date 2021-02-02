@@ -8,3 +8,5 @@ jobs:
       - run: |
           echo "Issue created/updated ID ${{ github.event.issue.number }}"
           export
+          echo "Testing what's inside workspace"
+          ls -la $GITHUB_WORKSPACE
