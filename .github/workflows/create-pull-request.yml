@@ -1,0 +1,33 @@
+on: issues
+
+name: Create pull request from issue
+
+jobs:
+  run:
+    name: Issue opened
+    if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Create dummy commits
+        run: |
+          git config user.name 'Christopher Obbard'
+          git config user.email 'obbardc@users.noreply.github.com'
+          mkdir -p scratch
+          FILE="scratch/test-data-$RANDOM"
+          echo "Test things!" > $FILE
+          git add $FILE
+          git commit -sm "Automated commit added by CI"
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+
+      - name: Check outputs
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+
