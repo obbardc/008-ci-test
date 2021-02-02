@@ -40,19 +40,16 @@ jobs:
           branch: auto/issue/${{ github.event.issue.number }}
           delete-branch: true
 
-      - name: Check outputs
-        run: |
-          echo "Pull Request Number - ${{ steps.create-pull-request.outputs.pull-request-number }}"
-          echo "Pull Request URL - ${{ steps.create-pull-request.outputs.pull-request-url }}"
-
       - name: Comment on issue
         uses: actions/github-script@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          env:
+            PULL_REQUEST_URL: ${{ steps.create-pull-request.outputs.pull-request-url }}
           script: |
             github.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: '👋 Thanks for your submission.\n\nPlease see ${{ steps.create-pull-request.outputs.pull-request-url }}'
+              body: '👋 Thanks for your submission.\n\nPlease see ' + process.env.PULL_REQUEST_URL
             })
