@@ -19,11 +19,11 @@ jobs:
           toolchain: stable
           override: true
 
-      - name: Build and install CI script
+      - name: Build CI scripts
         uses: actions-rs/cargo@v1
         with:
           command: install
-          args: --manifest-path ci/Cargo.toml
+          args: --path ci
 
-      - name: Run CI script (directly)
+      - name: Run CI scripts
         run: ci
