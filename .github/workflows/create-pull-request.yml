@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: benchmark-database-ci 
+        run: benchmark-database-ci test-github
 
       - name: Create dummy commits
         run: |
@@ -66,10 +66,10 @@ jobs:
 
       - name: Comment on issue
         uses: actions/github-script@v3
+        env:
+          PULL_REQUEST_URL: ${{ steps.create-pull-request.outputs.pull-request-url }}
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          env:
-            PULL_REQUEST_URL: ${{ steps.create-pull-request.outputs.pull-request-url }}
           script: |
             github.issues.createComment({
               issue_number: context.issue.number,
