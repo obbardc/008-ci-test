@@ -13,6 +13,9 @@ enum Opt {
 }
 
 fn main() {
+    // deliberate mistake to see if the CI works
+    junk();
+
     match Opt::from_args() {
         Opt::ProcessBenchmark { input } => {
             if !input.exists() || !input.is_file() {
