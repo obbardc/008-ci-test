@@ -1,16 +1,14 @@
 on: [push, pull_request]
 
-name: Test job
+name: Build benchmark-database-ci script
 
 jobs:
   run:
-    name: Test job
+    name: Build
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
@@ -24,6 +22,3 @@ jobs:
         with:
           command: install
           args: --path ci
-
-      - name: Run CI script
-        run: benchmark-database-ci

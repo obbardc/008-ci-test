@@ -8,10 +8,31 @@ jobs:
     if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
     runs-on: ubuntu-latest
     steps:
+      # TODO extract URL from the issue body
+      # TODO better make sure the URL is JSON?
+      # TODO download URL from the issue body
+      # TODO run the benchmark script with the right command
+
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
+
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          profile: minimal
+          toolchain: stable
+          override: true
+
+      - name: Build CI scripts
+        uses: actions-rs/cargo@v1
+        with:
+          command: install
+          args: --path ci
+
+      - name: Run CI script
+        run: benchmark-database-ci --help
 
       - name: Create dummy commits
         run: |
