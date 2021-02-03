@@ -25,5 +25,5 @@ jobs:
           command: install
           args: --path ci
 
-      - name: Run CI scripts
-        run: ci
+      - name: Run CI script
+        run: benchmark-database-ci

@@ -1,7 +1,9 @@
 [package]
-name = "ci"
+name = "benchmark-database-ci"
 version = "0.1.0"
 authors = ["Christopher Obbard <chris.obbard@collabora.com>"]
 edition = "2018"
+description = "Benchmark database CI scripts"
 
 [dependencies]
+structopt = "0.3"
