@@ -32,7 +32,10 @@ jobs:
           args: --path ci
 
       - name: Run CI script
-        run: benchmark-database-ci --help
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: benchmark-database-ci 
 
       - name: Create dummy commits
         run: |
