@@ -1,0 +1,13 @@
+/home/runner/work/008-ci-test/008-ci-test/ci/target/release/deps/url-8e02eced5894536d.rmeta: /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/lib.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/host.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/origin.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/parser.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/path_segments.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/slicing.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/quirks.rs
+
+/home/runner/work/008-ci-test/008-ci-test/ci/target/release/deps/liburl-8e02eced5894536d.rlib: /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/lib.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/host.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/origin.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/parser.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/path_segments.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/slicing.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/quirks.rs
+
+/home/runner/work/008-ci-test/008-ci-test/ci/target/release/deps/url-8e02eced5894536d.d: /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/lib.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/host.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/origin.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/parser.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/path_segments.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/slicing.rs /home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/quirks.rs
+
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/lib.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/host.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/origin.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/parser.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/path_segments.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/slicing.rs:
+/home/runner/.cargo/registry/src/github.com-1ecc6299db9ec823/url-2.2.0/src/quirks.rs:
